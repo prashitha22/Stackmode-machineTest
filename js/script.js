@@ -22,10 +22,11 @@ $(document).click(function() {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  const accordionHeaders = document.querySelectorAll(".accordion-header-wrap");
 
   accordionHeaders.forEach((header) => {
     header.addEventListener("click", function () {
+      this.classList.toggle("active");
       const content = this.nextElementSibling;
       if (content.style.maxHeight) {
         content.style.maxHeight = null;

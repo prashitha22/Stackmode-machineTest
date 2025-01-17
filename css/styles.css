@@ -372,5 +372,23 @@ li {
 	max-height: 200px; /* Adjust as needed */
 	padding: 10px;
   }
+
+  .personal-details-wrap {
+	display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  
+.accordion-header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	transition: all tr;
+}
+
+.accordion-header-wrap.active span {
+	transform: rotate(180deg);
+}
   
 
