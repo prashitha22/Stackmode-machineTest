@@ -17,8 +17,8 @@
             <!-- Left side Container Start -->
             <aside class="left-container">
                 <div class="side-top-container">
-                    <a href="#">
-                        <img src="images/harmburger-icon.svg" alt="harmburger-icon">
+                    <a href="javascript:void(0);" id="hamburger-icon">
+                        <img src="images/harmburger-icon.svg" alt="hamburger-icon">
                     </a>
                     <div class="side-logo">
                         <a href="#">
@@ -104,7 +104,7 @@
                                     </a>
                                 </li>
                                 <li class="member-actions-item cancel-membership">
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <img src="images/cancel-icon.svg" alt="Menu Icon">
                                         <span>Cancel Membership</span>
                                     </a>
@@ -116,10 +116,10 @@
                         <div class="application-record-container">
                             <div class="tab-section">
                                 <div class="tabs">
-                                    <button class="tab-button active" id="tab-1">Application Record</button>
-                                    <button class="tab-button" id="tab-2">Activity Logs</button>
+                                    <button class="tab-button active" data-tab="1">Application Record</button>
+                                    <button class="tab-button" data-tab="2">Activity Logs</button>
                                 </div>
-                                <div class="tab-content" id="tab-content-1">
+                                <div class="tab-content active" id="tab-1">
                                     <div class="application-record-wrap">
                                         <div class="application-time-wrap">
                                             <div class="application-time">
@@ -130,25 +130,25 @@
                                                 <label>Membership Plan:</label> <span>Life Member</span> 
                                             </div>
                                         </div>
-                                        <div>
+                                        <div class="edit-button-wrap">
                                             <img src="images/edit-icon.svg" alt="Application Record Icon">
                                             <span>Edit</span>
                                         </div>
                                         
                                     </div>
                                 </div>
-                                <div class="tab-content" id="tab-content-2">
+                                <div class="tab-content" id="tab-2">
                                     <div class="application-record-wrap">
                                         <div class="application-time-wrap">
                                             <div>
                                                 <label>Application Date:</label> 
-                                                <span>20 Jan 2024  </span>
+                                                <span>26 Jan 2024  </span>
                                             </div>
                                             <div>
-                                                <label>Membership Plan:</label> <span>Life Member</span> 
+                                                <label>Membership Plan:</label> <span>New Member</span> 
                                             </div>
                                         </div>
-                                        <div>
+                                        <div class="edit-button-wrap">
                                             <img src="images/edit-icon.svg" alt="Application Record Icon">
                                             <span>Edit</span>
                                         </div>
@@ -164,25 +164,72 @@
                                     </div>
                                     <div class="accordion-content">
                                         <div class="personal-details-wrap">
-                                            <div>
+                                            <div class="personal-detail-item">
+                                                <label>Salutation</label>
+                                                <p>Dr</p>
+                                            </div>
+                                            <div class="personal-detail-item">
                                                 <label>First Name</label>
                                                 <p>Dr. Kishor Gopan</p>
                                             </div>
-                                            <div>
+                                            <div class="personal-detail-item">
                                                 <label>Last Name</label>
                                                 <p>Dr. Kishor Gopan</p>
                                             </div>
-                                            <div>
+                                            <div class="personal-detail-item">
                                                 <label>Email</label>
                                                 <p>kishorgopan@email.com</p>
                                             </div>
-                                            <div>
+                                            <div class="personal-detail-item">
                                                 <label>Mobile</label>
                                                 <p>+971 33725359</p>
                                             </div>
-                                            <div>
+                                            <div class="personal-detail-item">
                                                 <label>Designation</label>
                                                 <p>Nuclear Medicine Technologist</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>Designation</label>
+                                                <p>Spectrum Imaging Clinic</p>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header-wrap">
+                                        <button class="accordion-header">Personal Details</button>
+                                        <span><img src="images/dropdown-arrow-icon.svg" alt=""></span>
+                                    </div>
+                                    <div class="accordion-content">
+                                        <div class="personal-details-wrap">
+                                            <div class="personal-detail-item">
+                                                <label>Salutation</label>
+                                                <p>Dr</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>First Name</label>
+                                                <p>Dr. Kishor Gopan</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>Last Name</label>
+                                                <p>Dr. Kishor Gopan</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>Email</label>
+                                                <p>kishorgopan@email.com</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>Mobile</label>
+                                                <p>+971 33725359</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>Designation</label>
+                                                <p>Nuclear Medicine Technologist</p>
+                                            </div>
+                                            <div class="personal-detail-item">
+                                                <label>Designation</label>
+                                                <p>Spectrum Imaging Clinic</p>
                                             </div>
                                         </div>
                                     
@@ -233,6 +280,31 @@
         </div>
        </div>
 
+
+       <!-- member Cancellation popup end-->
+
+       <div class="popup-overlay"></div>
+       <div class="popup popup-edit-application">
+        <div class="popup-close-icon">
+            <img src="images/close-icon.svg" alt="Close Icon">
+        </div>
+        <div class="popup-edit-application-wrap">
+            <div class="popup-edit-application-header"> 
+                <h4 class="popup-edit-application-title">Edit Application Record 1</h4>
+            </div>
+            <hr>
+            <div class="popup-edit-application-body">
+                <form>
+                    <div class="form-input">
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <div class="form-input">
+                        <input type="mail" placeholder="Enter Email">
+                    </div>
+                </form>
+            </div>
+        </div>
+       </div>
         
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
